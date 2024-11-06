@@ -1,22 +1,28 @@
 from arborize import define_model
 
-PurkinjeCellModel = define_model(
+definitionPC = define_model(
     {
         "synapse_types": {
             "AMPA": {
-                "tau_facil": 54,
-                "tau_rec": 35.1,
-                "tau_1": 6,
-                "gmax": 1200,
-                "U": 0.13,
+                "mechanism": "AMPA",
+                "parameters": {
+                    "tau_facil": 54,
+                    "tau_rec": 35.1,
+                    "tau_1": 6,
+                    "gmax": 1200,
+                    "U": 0.13,
+                },
             },
             "GABA": {
-                "tau_facil": 4,
-                "tau_rec": 15,
-                "tau_1": 1,
-                "Erev": -70,
-                "gmax": 2600,
-                "U": 0.35,
+                "mechanism": "GABA",
+                "parameters": {
+                    "tau_facil": 4,
+                    "tau_rec": 15,
+                    "tau_1": 1,
+                    "Erev": -70,
+                    "gmax": 2600,
+                    "U": 0.35,
+                },
             },
         },
         "cable_types": {
@@ -44,6 +50,19 @@ PurkinjeCellModel = define_model(
                     "HCN1": {"gbar": 0.00192222696826},
                     ("cdp5", "CAM"): {"TotalPump": 2e-08},
                 },
+                "synapses": {
+                    "GABA": {
+                        "mechanism": "GABA",
+                        "parameters": {
+                            "tau_facil": 4,
+                            "tau_rec": 15,
+                            "tau_1": 1,
+                            "Erev": -70,
+                            "gmax": 2600,
+                            "U": 0.35,
+                        },
+                    },
+                },
             },
             "dendrites": {
                 "cable": {
@@ -69,6 +88,18 @@ PurkinjeCellModel = define_model(
                     "Kca1_1": {"gbar": 0.03803999223084},
                     "HCN1": {"gbar": 2.49811225e-06},
                     ("cdp5", "CAM"): {"TotalPump": 5e-08},
+                },
+                "synapses": {
+                    "AMPA": {
+                        "mechanism": "AMPA",
+                        "parameters": {
+                            "tau_facil": 54,
+                            "tau_rec": 35.1,
+                            "tau_1": 6,
+                            "gmax": 1200,
+                            "U": 0.13,
+                        },
+                    },
                 },
             },
             "basal_dendrites": {
@@ -104,6 +135,9 @@ PurkinjeCellModel = define_model(
                     "Nav1_6": {"gbar": 0.01568012827236},
                 },
             },
+            "aa_targets": {"cable": {}, "ions": {}, "mechanisms": {}},
+            "pf_targets": {"cable": {}, "ions": {}, "mechanisms": {}},
+            "sc_targets": {"cable": {}, "ions": {}, "mechanisms": {}},
             "AIS": {
                 "cable": {"Ra": 122, "cm": 1},
                 "ions": {
@@ -120,6 +154,7 @@ PurkinjeCellModel = define_model(
                     ("cdp5", "CAM"): {"TotalPump": 2e-08},
                 },
             },
+            "axon": {"cable": {}, "ions": {}, "mechanisms": {}},
             "AIS_K": {
                 "cable": {"Ra": 122, "cm": 1},
                 "ions": {"k": {"rev_pot": -88}},
@@ -154,7 +189,8 @@ PurkinjeCellModel = define_model(
     use_defaults=True,
 )
 
-PurkinjeCellModel.swc_tags = {
+
+tagsPC = {
     6: ["axon", "AIS"],
     7: ["axon", "AIS_K"],
     8: ["axon", "axonmyelin"],
@@ -162,4 +198,5 @@ PurkinjeCellModel.swc_tags = {
     10: ["dendrites", "basal_dendrites"],
     11: ["dendrites", "pf_targets", "sc_targets"],
     12: ["dendrites", "aa_targets", "sc_targets"],
+    13: ["dendrites", "sodium_dendrites"],
 }
