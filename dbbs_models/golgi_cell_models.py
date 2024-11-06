@@ -1,6 +1,6 @@
 from arborize import define_model
 
-definitionGolgi = define_model(
+GolgiCellModel = define_model(
     {
         "synapse_types": {
             "AMPA_PF": {
@@ -198,7 +198,7 @@ definitionGolgi = define_model(
     use_defaults=True,
 )
 
-tagsGolgi = {
+GolgiCellModel.swc_tags = {
     6: ["dendrites", "basal_dendrites"],
     7: ["dendrites", "apical_dendrites"],
     8: ["axon", "axon_initial_segment"],

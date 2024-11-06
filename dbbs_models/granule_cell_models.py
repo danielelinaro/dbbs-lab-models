@@ -1,6 +1,6 @@
 from arborize import define_model
 
-definitionGrC = define_model(
+GranuleCellModel = define_model(
     {
         "synapse_types": {
             "AMPA": {
@@ -120,8 +120,7 @@ definitionGrC = define_model(
     use_defaults=True,
 )
 
-
-tagsGrC = {
+GranuleCellModel.swc_tags = {
     6: ["axon", "axon_hillock"],
     7: ["axon", "axon_initial_segment"],
     8: ["axon", "ascending_axon"],

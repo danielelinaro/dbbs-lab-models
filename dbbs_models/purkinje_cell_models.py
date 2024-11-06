@@ -1,6 +1,6 @@
 from arborize import define_model
 
-definitionPC = define_model(
+PurkinjeCellModel = define_model(
     {
         "synapse_types": {
             "AMPA": {
@@ -189,8 +189,7 @@ definitionPC = define_model(
     use_defaults=True,
 )
 
-
-tagsPC = {
+PurkinjeCellModel.swc_tags = {
     6: ["axon", "AIS"],
     7: ["axon", "AIS_K"],
     8: ["axon", "axonmyelin"],
