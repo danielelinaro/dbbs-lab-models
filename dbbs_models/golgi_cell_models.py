@@ -52,9 +52,9 @@ GolgiCellModel = define_model(
             "soma": {
                 "cable": {"Ra": 122, "cm": 1},
                 "ions": {
-                    "na": {"rev_pot": 60},
-                    "k": {"rev_pot": -80},
-                    "ca": {"rev_pot": 140.70872293},
+                    "na": {"e": 60},
+                    "k": {"e": -80},
+                    "ca": {"e": 140.70872293},
                 },
                 "mechanisms": {
                     "Leak": {"e": -55, "gmax": 3e-05},
@@ -73,9 +73,9 @@ GolgiCellModel = define_model(
             "basal_dendrites": {
                 "cable": {"Ra": 122, "cm": 2.5},
                 "ions": {
-                    "na": {"rev_pot": 60},
-                    "k": {"rev_pot": -80},
-                    "ca": {"rev_pot": 140.70872293},
+                    "na": {"e": 60},
+                    "k": {"e": -80},
+                    "ca": {"e": 140.70872293},
                 },
                 "mechanisms": {
                     "Leak": {"e": -55, "gmax": 3e-05},
@@ -135,9 +135,9 @@ GolgiCellModel = define_model(
             "apical_dendrites": {
                 "cable": {"Ra": 122, "cm": 2.5},
                 "ions": {
-                    "na": {"rev_pot": 60},
-                    "k": {"rev_pot": -80},
-                    "ca": {"rev_pot": 140.70872293},
+                    "na": {"e": 60},
+                    "k": {"e": -80},
+                    "ca": {"e": 140.70872293},
                 },
                 "mechanisms": {
                     "Leak": {"e": -55, "gmax": 3e-05},
@@ -164,9 +164,9 @@ GolgiCellModel = define_model(
             "axon": {
                 "cable": {"Ra": 122, "cm": 1},
                 "ions": {
-                    "na": {"rev_pot": 60},
-                    "k": {"rev_pot": -80},
-                    "ca": {"rev_pot": 140.70872293},
+                    "na": {"e": 60},
+                    "k": {"e": -80},
+                    "ca": {"e": 140.70872293},
                 },
                 "mechanisms": {
                     "Leak": {"e": -55, "gmax": 1e-06},
@@ -178,9 +178,9 @@ GolgiCellModel = define_model(
             "axon_initial_segment": {
                 "cable": {"Ra": 122, "cm": 1},
                 "ions": {
-                    "na": {"rev_pot": 60},
-                    "k": {"rev_pot": -80},
-                    "ca": {"rev_pot": 140.70872293},
+                    "na": {"e": 60},
+                    "k": {"e": -80},
+                    "ca": {"e": 140.70872293},
                 },
                 "mechanisms": {
                     "Leak": {"e": -55, "gmax": 3e-05},
